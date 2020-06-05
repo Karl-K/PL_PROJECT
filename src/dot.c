@@ -23,6 +23,7 @@ static unsigned short dot_hexadecimal[16][MAX_DOT] = {
 
 static short * dot[MAX_DOT];
 
+
 void init_dot(short * address[]) {
 	int i;
 	for( i=0; i<MAX_DOT; i++ ) {
