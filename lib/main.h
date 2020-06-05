@@ -47,8 +47,7 @@ void unmapper();
 void emergency_closer();
 
 truth_t logic();
-void select_mode();
-void input_mode();
+
 
 
 #endif
