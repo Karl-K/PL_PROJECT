@@ -1,4 +1,4 @@
-//-------| src/led.c |-------//
+//-------| src/led.c |-------////
 #include "led.h"
 
 static short * led;
