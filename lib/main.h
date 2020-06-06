@@ -7,8 +7,10 @@
 #include <fcntl.h>		// open()
 #include <unistd.h>		// close(), off_t , usleep()
 #include <sys/mman.h>	// mmap(), munmap()
-#include <stdlib.h> 	// exit()
+#include <stdlib.h> 	// exit(), rand()
 #include <string.h>		// strlen()
+#include <time.h>	// time()
+#include <math.h>	// abs()
 
 
 #include "ieb.h"
@@ -17,7 +19,6 @@
 #include "fnd.h"
 #include "clcd.h"
 #include "keypad.h"
-
 
 
 typedef enum {

@@ -115,4 +115,29 @@ void input_mode {
 	int key_count, key_value;
 	char clcd_str[20];
 	key_count = keyboard_read(&key_value);
+}
+
+void mini_game{
+	int boom;
+	int p[people];
+	int diff;
+	int loser;
+	int min = 15;
+	
+	srand( time(NULL) );	// seed
+	boom =  rand()%15;
+	
+	for( i=0; i<people; i++ ) {
+		scanf("%d", p[i]);
+		clcd_write();
+		diff = abs( boom - p[i] );
+		
+		if ( min > diff ) {
+			min = diff;
+			loser = i;
+		}
+		else { min = min; }
+	}
+	clcd_write();
+}
 	
