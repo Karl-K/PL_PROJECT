@@ -94,4 +94,25 @@ truth_t logic() {
 	return TRUE;
 }
 
+void select_mode() {
+	int i; char p[100], m[100];
+	char clcd_str[20] = "";
 
+	led_clear();
+	dot_clear();
+	fnd_clear();
+	clcd_clear_display();
+
+	printf("\n");
+	printf("************************************\n");
+	printf("*    SHARE THE EXPENSES EQUALLY   *\n");
+	printf("*       press how many people      *\n");
+	printf("*       press how much money      *\n");
+	printf("************************************\n\n");
+}
+
+void input_mode {
+	int key_count, key_value;
+	char clcd_str[20];
+	key_count = keyboard_read(&key_value);
+	
