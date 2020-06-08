@@ -118,7 +118,13 @@ void input_mode {
 	int key_count, key_value;
 	char clcd_str[20];
 	key_count = keyboard_read( &key_value );
+	fnd_write( key_value , 7 );
+	sprintf( clcd_str, "money : %d", key_value );
+	clcd_set_DDRAM( 0x00 );
 
+	usleep(0);
+}
+	
 	
 	
 }
