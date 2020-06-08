@@ -24,6 +24,8 @@ static int fd;
 static int map_counter = 0;
 static void * map_data[100];
 static seclection_t sel; 
+int people = 0;
+int money = 0;
 
 
 int main(int argc, char* argv[]) {
@@ -109,12 +111,16 @@ void select_mode() {
 	printf("*       press how many people      *\n");
 	printf("*       press how much money      *\n");
 	printf("************************************\n\n");
+	sel.all = 0xFF;
 }
 
 void input_mode {
 	int key_count, key_value;
 	char clcd_str[20];
-	key_count = keyboard_read(&key_value);
+	key_count = keyboard_read( &key_value );
+
+	
+	
 }
 
 void mini_game{
@@ -122,10 +128,10 @@ void mini_game{
 	int p[people];
 	int diff;
 	int loser;
-	int min = 15;
+	int min = 16;
 	
 	srand( time(NULL) );	// seed
-	boom =  rand()%15;
+	boom =  rand()%16;
 	
 	for( i=0; i<people; i++ ) {
 		scanf("%d", p[i]);

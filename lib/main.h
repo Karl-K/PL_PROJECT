@@ -11,6 +11,7 @@
 #include <string.h>		// strlen()
 #include <time.h>	// time()
 #include <math.h>	// abs()
+#include <conio.h> // kbhit(), getch()
 
 
 #include "ieb.h"

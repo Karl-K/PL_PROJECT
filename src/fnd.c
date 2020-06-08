@@ -44,7 +44,7 @@ void fnd_all() {
 }
 
 void fnd_write(int hexadecimal, int fnd_num) {
-	*fnd[fnd_num] = fnd_hexadecimal[hexadecimal];
+	*fnd[fnd_num] = fnd_hexadecimal[hexadecimala];
 }
 
 void fnd_hexa_number(unsigned long number) {
