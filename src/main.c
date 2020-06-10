@@ -150,6 +150,6 @@ void mini_game() {
 		}
 		else { min = min; }
 	}
-	clcd_write();
+	clcd_write_string();
 }
 	
