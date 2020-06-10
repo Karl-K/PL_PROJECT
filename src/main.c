@@ -1,5 +1,6 @@
 //-------| src/main.c |-------//
 #include "main.h"
+#include "getch.h"
 
 
 static off_t IEB_DOT[MAX_DOT] = {
