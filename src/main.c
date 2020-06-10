@@ -125,9 +125,7 @@ void input_mode() {
 	usleep(0);
 }
 	
-	
-	
-}
+
 
 void mini_game() {
 	int boom;
@@ -139,6 +137,8 @@ void mini_game() {
 	srand( time(NULL) );	// seed
 	boom =  rand()%16;
 	
+	int i;
+
 	for( i=0; i<people; i++ ) {
 		scanf("%d", p[i]);
 		clcd_write();
