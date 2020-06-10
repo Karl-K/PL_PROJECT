@@ -108,8 +108,8 @@ void select_mode() {
 	printf("\n");
 	printf("************************************\n");
 	printf("*    SHARE THE EXPENSES EQUALLY   *\n");
-	printf("*       press how many people      *\n");
-	printf("*       press how much money      *\n");
+	printf("*       press any key to start       *\n");
+	printf("*         press 'e' to exit        *\n");
 	printf("************************************\n\n");
 	sel.all = 0xFF;
 }

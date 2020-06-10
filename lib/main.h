@@ -41,7 +41,7 @@ typedef union {
 		unsigned char clcd : 1;
 		unsigned char exit : 1;
 	};
-} seclection_t;
+} selection_t;
 
 int main();
 short * mapper(off_t offset, int prot);
