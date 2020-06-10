@@ -23,7 +23,7 @@ static off_t IEB_FND[MAX_FND] = {
 static int fd;
 static int map_counter = 0;
 static void * map_data[100];
-static seclection_t sel; 
+static selection_t sel; 
 int people = 0;
 int money = 0;
 

@@ -11,10 +11,10 @@
 #include <string.h>		// strlen()
 #include <time.h>	// time()
 #include <math.h>	// abs()
-#include <getch.h>	// getch()
-#include <kbhit.h>	// kbhit()
 
 
+#include "getch.h"	// getch()
+#include "kbhit.h"	// kbhit()
 #include "ieb.h"
 #include "led.h"
 #include "dot.h"
