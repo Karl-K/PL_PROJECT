@@ -49,7 +49,8 @@ void unmapper();
 void emergency_closer();
 
 truth_t logic();
-
+void input_mode();
+void mini_game();
 
 
 #endif
