@@ -140,7 +140,7 @@ void mini_game() {
 	int i;
 
 	for( i=0; i<people; i++ ) {
-		scanf("%d", p[i]);
+		scanf("%d", *p[i]);
 		clcd_write();
 		diff = abs( boom - p[i] );
 		
