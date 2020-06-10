@@ -114,7 +114,7 @@ void select_mode() {
 	sel.all = 0xFF;
 }
 
-void input_mode {
+void input_mode() {
 	int key_count, key_value;
 	char clcd_str[20];
 	key_count = keyboard_read( &key_value );
@@ -129,7 +129,7 @@ void input_mode {
 	
 }
 
-void mini_game{
+void mini_game() {
 	int boom;
 	int p[people];
 	int diff;
