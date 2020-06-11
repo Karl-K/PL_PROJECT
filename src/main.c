@@ -183,7 +183,7 @@ void mini_game() {
 	for( i=0; i<people; i++ ) {
 		sprintf( explain, "Press key for %d", i + 1 );
 		clcd_write_string( explain );
-		scanf("%d", p[i]);
+		p[i] = keyboard_read( &key_value );
 		
 		diff = abs( boom - p[i] );
 		
