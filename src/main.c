@@ -160,6 +160,10 @@ void input_mode() {
 
 
 	usleep(0);
+	led_clear();
+	dot_clear();
+	fnd_clear();
+	clcd_clear_display();
 }
 	
 
