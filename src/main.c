@@ -115,13 +115,13 @@ void select_mode() {
 	printf("************************************\n\n");
 	scanf("%s", buf);
 
-	if( buf[0] == '1' ) {
+	if( buf[0] == 1 ) {
 		sel.input = 1; mode = 10;
 	}
-	else if( buf[0] == '2' ) {
+	else if( buf[0] == 2 ) {
 		sel.input = 1; mode = 100;
 	}
-	else if( buf[0] == '3' ) {
+	else if( buf[0] == 3 ) {
 		sel.input = 1; mode = 1000;
 	}
 	else if( buf[0] == 'e' ) { sel.exit = 1;}
