@@ -206,7 +206,7 @@ void mini_game() {
 		else { min = min; }
 	}
 	clcd_clear_display();
-	sprintf( cboom, "Boom : %d, pick : %d", boom, p[loser] );
+	sprintf( cboom, "B : %d, p : %d", boom, p[loser] );
 	clcd_write_string( cboom );
 	sprintf( closer, "Looser : %d", loser );
 	clcd_set_DDRAM( 0x40 );
@@ -233,7 +233,7 @@ void output_mode() {
 	sprintf( money_for, "Money for each : " );
 	clcd_write_string( money_for );
 
-	if( sel.mini == 0 ) {
+	if( mini == 0 ) {
 		sprintf( money_for, "Money for each : " );
 		clcd_write_string( money_for );
 		money_each = money / people;
