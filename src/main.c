@@ -189,12 +189,13 @@ void mini_game() {
 	srand( time(NULL) );	// seed
 	boom =  rand()%16;
 	
-	int i;
+	int i, j;
 
 	for( i=0; i<people; i++ ) {
 		clcd_clear_display();
 		sprintf( explain, "Press key for %d", i + 1 );
 		clcd_write_string( explain );
+		j = keyboard_read( &key_value );
 		p[i] = key_value;
 		
 		diff = abs( boom - p[i] );
