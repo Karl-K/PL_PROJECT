@@ -115,18 +115,15 @@ void select_mode() {
 	printf("************************************\n\n");
 	scanf("%s", buf);
 
-	if( buf[0] == '1' ) {
-		sel.input = 1; mode = 10; sel.exit = 0;
-	}
-	else if( buf[0] == '2' ) {
-		sel.input = 1; mode = 100; sel.exit = 0;
-	}
-	else if( buf[0] == '3' ) {
-		sel.input = 1; mode = 1000; sel.exit = 0;
-	}
-	else if( buf[0] == 'e' ) { sel.exit = 1;}
-	else { 
-		printf("Error"); sel.exit = 1;
+	if( buf[0] == 'e' ) { sel.exit = 1;}
+	else {
+		sel.input = 1;
+		if( buf[0] == '1' ) { mode = 10; }
+		else if( buf[0] == '2' ) { mode = 100; }
+		else if( buf[0] == '3' ) { mode = 1000; }
+		else {
+			printf("ERRPR"); sel.all = 0
+		}
 	}
 	
 }
