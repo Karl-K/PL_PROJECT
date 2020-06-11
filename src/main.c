@@ -117,17 +117,17 @@ void select_mode() {
 	scanf("%s", buf);
 
 	if( buf[0] = '1' ) {
-		sel.input = 1; sel.exit = 0; mode = 10;
+		sel.input = 1; mode = 10;
 	}
 	else if( buf[0] = '2' ) {
-		sel.input = 1; sel.exit = 0; mode = 100;
+		sel.input = 1; mode = 100;
 	}
 	else if( buf[0] = '3' ) {
-		sel.input = 1; sel.exit = 0; mode = 1000;
+		sel.input = 1; mode = 1000;
 	}
 	else if( buf[0] = 'e' ) { sel.exit = 1; break; }
 	else { 
-		printf("Error"); break;
+		printf("Error"); sel.exit = 1; break;
 	}
 	
 }
