@@ -27,6 +27,7 @@ static selection_t sel;
 int people = 0;
 int money = 0;
 int mode = 0;
+int mini = 0;
 
 
 int main(int argc, char* argv[]) {
@@ -204,13 +205,16 @@ void mini_game() {
 		}
 		else { min = min; }
 	}
+	clcd_clear_display();
 	sprintf( cboom, "Boom : %d, pick : %d", boom, p[loser] );
 	clcd_write_string( cboom );
 	sprintf( closer, "Looser : %d", loser );
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( closer );
 
-	usleep(5000000);
+	usleep(3000000);
+	mini = 1;
+	sel.mini = 0;
 	sel.output = 1;
 }
 
@@ -237,6 +241,7 @@ void output_mode() {
 		clcd_set_DDRAM( 0x40 );
 		clcd_write_string( cmoney_each );
 		dot_write( 0x0F );
+		led_blink_all();
 		fnd_deci_number( money_each );
 		
 		usleep(0);
@@ -251,6 +256,7 @@ void output_mode() {
 		clcd_set_DDRAM( 0x40 );
 		clcd_write_string( cmoney_loser );
 		dot_write( 0x0F );
+		led_blink_all();
 		fnd_deci_number( money_each );
 
 		usleep(0);
