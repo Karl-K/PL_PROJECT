@@ -195,7 +195,7 @@ void mini_game() {
 		clcd_clear_display();
 		sprintf( explain, "Press key for %d", i + 1 );
 		clcd_write_string( explain );
-		p[i] = keyboard_read( &key_value );
+		p[i] = key_value;
 		
 		diff = abs( boom - p[i] );
 		
@@ -211,8 +211,9 @@ void mini_game() {
 	sprintf( closer, "Looser : %d", loser );
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( closer );
+	dot_write( loser )
 
-	usleep(3000000);
+	usleep(5000000);
 	mini = 1;
 	sel.mini = 0;
 	sel.output = 1;
