@@ -139,14 +139,14 @@ void input_mode() {
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( clcd_str2 );
 	
-	i = keyboard_read( &key_value );
+	i = keyboard_read( *key_value );
 	people = key_value;
 	dot_write( people );
 	sprintf( clcd_str1, "People : %d", people );
 	clcd_set_DDRAM( 0x00 );
 	clcd_write_string( clcd_str1 );
 	
-	j = keyboard_read( &key_value );
+	j = keyboard_read( *key_value );
 	money = key_value;
 	fnd_write( money, 7 );
 	sprintf( clcd_str2, "Money : %d", money );
