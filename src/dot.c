@@ -48,9 +48,9 @@ void dot_write(int number) {
 }
 
 void dot_arrow() {
-	*dot[0] = 0x04;
-	*dot[1] = 0x04;
+	*dot[0] = 0x08;
+	*dot[1] = 0x08;
 	*dot[2] = 0x49;
 	*dot[3] = 0x2A;
-	*dot[4] = 0x1B;
+	*dot[4] = 0x1C;
 }
