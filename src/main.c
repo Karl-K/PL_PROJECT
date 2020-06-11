@@ -132,7 +132,7 @@ void input_mode() {
 	int key_value;
 	char clcd_str1[20];
 	char clcd_str2[20];
-	sprintf( clcd_str1, "Poeple : ");
+	sprintf( clcd_str1, "People : ");
 	sprintf( clcd_str2, "Money : ");
 	clcd_set_DDRAM( 0x00 );
 	clcd_write_string( clcd_str1 );
