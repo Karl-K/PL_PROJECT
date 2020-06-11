@@ -195,12 +195,12 @@ void mini_game() {
 	}
 	sprintf( cboom, "Boom : %d, pick : %d", boom, p[loser] );
 	clcd_write_string( cboom );
-	sprintf( closer, "Looser : %d", loser )
+	sprintf( closer, "Looser : %d", loser );
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( closer );
 
 	usleep(5000000);
-	sel.ouput = 1;
+	sel.output = 1;
 	break;
 }
 
