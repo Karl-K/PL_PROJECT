@@ -248,7 +248,7 @@ void output_mode() {
 	else {
 		due = (money/people) % mode;
 		money_each = (money/people) - due;
-		money_loser = money - (money_each * people);
+		money_loser = money_each + money - (money_each * people);
 		sprintf( cmoney_each, "each : %d", money_each );
 		clcd_write_string( cmoney_each );
 		sprintf( cmoney_loser, "loser : %d", money_loser );
