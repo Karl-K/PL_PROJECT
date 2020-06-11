@@ -50,7 +50,7 @@ void fnd_write(int hexadecimal, int fnd_num) {
 void fnd_deci_number(int number) {
 	int i;
 	for(i=0; i<MAX_FND; i++) {
-		fnd_write( (number%10), MAX_FND-i );
+		fnd_write( (number%10), i );
 		number = number/10;
 	}
 }
