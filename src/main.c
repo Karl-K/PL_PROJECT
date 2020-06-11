@@ -220,10 +220,10 @@ void mini_game() {
 			if( draw = 1) {
 				clcd_clear_display();
 				sprintf( restart1, "Draw !! ");
-				clcd_write_stirng( restart1 );
+				clcd_write_string( restart1 );
 				clcd_set_DDRAM( 0x40 );
 				sprintf( restart2, "Ready to Restart" );
-				clcd_write_display( restart2 );
+				clcd_write_string( restart2 );
 				usleep(2500000);
 			}
 			
@@ -231,12 +231,10 @@ void mini_game() {
 
 		if( d = 1 ) {
 			clcd_clear_display();
-			for ( i = 0; i<people; i++ ) {
-				p[i] = 'NULL'
-			}
+			p[people] = { 0, };
 			
 			for( i=0; i<people; i++ ) {
-				if( re[i] != 'NULL' ) {
+				if( re[i] != '0' ) {
 					sprintf( explain, "Press key for %d", re[i] );
 					clcd_write_string( explain );
 					k = keyboard_read( &key_value );
@@ -261,14 +259,14 @@ void mini_game() {
 			if( draw = 1) {
 				clcd_clear_display();
 				sprintf( restart1, "Draw !! ");
-				clcd_write_stirng( restart1 );
+				clcd_write_string( restart1 );
 				clcd_set_DDRAM( 0x40 );
 				sprintf( restart2, "Ready to Restart" );
-				clcd_write_display( restart2 );
+				clcd_write_string( restart2 );
 				usleep(2500000);
 			}
 		}
-	} while( draw = 0 )
+	} while( draw = 0 );
 
 
 	/* for( i=0; i<people; i++ ) {
