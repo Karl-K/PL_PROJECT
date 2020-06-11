@@ -18,6 +18,7 @@ void init_keypad(short * address_out, short * address_in) {
 
 int keyboard_read(int * key_value) {
 	int key_count = 0;
+	int a;
 	char buf[10];
 	int i, j;
 	scanf("%s", buf);
@@ -30,6 +31,7 @@ int keyboard_read(int * key_value) {
 			for( j=0; j<16; j++){
 				if(buf[i] == keyboard[j]){
 					*key_value = j;
+					a = a + j * 10 ^ (key_count - 1 -i);
 				}
 			}
 		}
