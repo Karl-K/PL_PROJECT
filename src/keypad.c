@@ -30,7 +30,7 @@ int keyboard_read(int * key_value) {
 		for( i=0; i<key_count; i++ ){
 			for( j=0; j<16; j++){
 				if(buf[i] == keyboard[j]){
-					a = a + j * pow(10,key_count-1-i);
+					a = a + j * 10**(key_count-1-i);
 					*key_value = a;
 				}
 			}
