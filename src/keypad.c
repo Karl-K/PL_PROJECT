@@ -31,10 +31,10 @@ int keyboard_read(int * key_value) {
 			for( j=0; j<16; j++){
 				if(buf[i] == keyboard[j]){
 					a = a + j * 10^(key_count-1-i);
-					*key_value = a;
-				}
+					}
 			}
 		}
+		*key_value = a;
 		return key_count;
 	}
 }
