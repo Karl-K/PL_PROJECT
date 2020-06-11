@@ -21,7 +21,7 @@ int keyboard_read(int * key_value) {
 	int key_count = 0;
 	int a = 0;
 	char buf[10];
-	int i, j;
+	int i, j, k;
 	scanf("%s", buf);
 	key_count = strlen(buf);
 	if(key_count == 0){
@@ -31,7 +31,8 @@ int keyboard_read(int * key_value) {
 		for( i=0; i<key_count; i++ ){
 			for( j=0; j<16; j++){
 				if(buf[i] == keyboard[j]){
-					a = a + j * pow(10,(key_count-1-i));
+					k = key_count - 1 - i;
+					a = a + j * 10^k;
 					*key_value = a;
 				}
 			}
