@@ -241,7 +241,7 @@ void output_mode() {
 		sprintf( cmoney_each, "%d", money_each );
 		clcd_set_DDRAM( 0x40 );
 		clcd_write_string( cmoney_each );
-		dot_write( 0x0F );
+		dot_arrow();
 		led_blink_all();
 		fnd_deci_number( money_each );
 		
