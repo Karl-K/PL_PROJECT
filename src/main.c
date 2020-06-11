@@ -167,7 +167,6 @@ void input_mode() {
 }
 	
 
-
 void mini_game() {
 	led_clear();
 	dot_clear();
@@ -176,6 +175,7 @@ void mini_game() {
 
 	int boom;
 	int p[people];
+	int re[10];
 	int diff;
 	int loser;
 	int min = 16;
@@ -256,7 +256,7 @@ void output_mode() {
 		sprintf( cmoney_loser, "loser : %d", money_loser );
 		clcd_set_DDRAM( 0x40 );
 		clcd_write_string( cmoney_loser );
-		dot_write( 0x0F );
+		dot_arrow();
 		led_blink_all();
 		fnd_deci_number( money_each );
 

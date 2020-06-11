@@ -11,7 +11,8 @@
 
 void init_dot(short * address[]);
 void dot_clear();
-void dot_write(int number) ;
+void dot_write(int number);
+void dot_arrow();
 
 
 #endif
