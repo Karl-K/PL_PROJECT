@@ -224,7 +224,7 @@ void mini_game() {
 				clcd_set_DDRAM( 0x40 );
 				sprintf( restart2, "Ready to Restart" );
 				clcd_write_string( restart2 );
-				usleep(2500000);
+				usleep(3000000);
 			}
 			
 		}
@@ -266,7 +266,7 @@ void mini_game() {
 				clcd_set_DDRAM( 0x40 );
 				sprintf( restart2, "Ready to Restart" );
 				clcd_write_string( restart2 );
-				usleep(2500000);
+				usleep(3000000);
 			}
 		}
 	} while( draw = 0 );
