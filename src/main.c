@@ -231,7 +231,9 @@ void mini_game() {
 
 		if( d = 1 ) {
 			clcd_clear_display();
-			p[people] = { 0, };
+			for ( i = 0; i<people; i++ ) {
+				p[i] = 0;
+			}
 			
 			for( i=0; i<people; i++ ) {
 				if( re[i] != '0' ) {
