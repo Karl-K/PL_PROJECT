@@ -132,6 +132,12 @@ void input_mode() {
 	int key_value;
 	char clcd_str1[20];
 	char clcd_str2[20];
+	clcd_str1 = "People : ";
+	clcd_str2 = "Money : ";
+	clcd_set_DDRAM( 0x00 );
+	clcd_write_string( clcd_str1 );
+	clcd_set_DDRAM( 0x40 );
+	clcd_write_string( clcd_str2 );
 	
 	people = keyboard_read( &key_value );
 	dot_write( people );
