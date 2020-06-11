@@ -97,7 +97,7 @@ truth_t logic() {
 }
 
 void select_mode() {
-	int i; char p[100], m[100];
+	int i; char buf[1];
 	char clcd_str[20] = "";
 
 	led_clear();
@@ -107,11 +107,17 @@ void select_mode() {
 
 	printf("\n");
 	printf("************************************\n");
-	printf("*    SHARE THE EXPENSES EQUALLY   *\n");
-	printf("*       press any key to start       *\n");
+	printf("*    SHARE THE EXPENSES EQUALLY    *\n");
+	printf("*       press Enter to start       *\n");
 	printf("*         press 'e' to exit        *\n");
 	printf("************************************\n\n");
-	sel.all = 0xFF;
+	scanf("%s", buf);
+
+	if( buf[0] = 'e' ) { sel.exit = 1; break; }
+	else {
+		sel.input = 1; sel.exit = 0; break;
+	}
+	
 }
 
 void input_mode() {

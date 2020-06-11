@@ -36,10 +36,8 @@ typedef enum {
 typedef union {
 	unsigned char all;
 	struct {
-		unsigned char  led : 1;
-		unsigned char  dot : 1;
-		unsigned char  fnd : 1;
-		unsigned char clcd : 1;
+		unsigned char  input : 1;
+		unsigned char  mini : 1;
 		unsigned char exit : 1;
 	};
 } selection_t;
