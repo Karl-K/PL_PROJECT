@@ -153,6 +153,8 @@ void input_mode() {
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( clcd_str2 );
 
+	usleep(3000000);
+
 	if( (money/people)%mode == 0 ) { sel.output == 1;}
 	else { sel.mini == 1;}
 
