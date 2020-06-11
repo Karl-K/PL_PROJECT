@@ -201,7 +201,6 @@ void mini_game() {
 
 	usleep(5000000);
 	sel.output = 1;
-	break;
 }
 
 void output_mode() {
@@ -239,7 +238,7 @@ void output_mode() {
 		clcd_write_string( cmoney_each );
 		sprintf( cmoney_loser, "loser : %d", money_loser );
 		clcd_set_DDRAM( 0x40 );
-		clcd_write_stirng( cmoney_loser );
+		clcd_write_string( cmoney_loser );
 		dot_write( 0x0F );
 		fnd_write( money_each, 7 );
 
