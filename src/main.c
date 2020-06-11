@@ -237,6 +237,7 @@ void mini_game() {
 			
 			for( i=0; i<people; i++ ) {
 				if( re[i] != '0' ) {
+					clcd_clear_display();
 					sprintf( explain, "Press key for %d", re[i] );
 					clcd_write_string( explain );
 					k = keyboard_read( &key_value );
