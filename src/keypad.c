@@ -27,9 +27,9 @@ int power(int a, int b) {
 
 int keyboard_read(int * key_value) {
 	int key_count = 0;
-	int a = 0;
 	char buf[10];
-	int i, j, k;
+	int i, j;
+	int input = 0;
 	scanf("%s", buf);
 	key_count = strlen(buf);
 	if(key_count == 0){
@@ -39,13 +39,12 @@ int keyboard_read(int * key_value) {
 		for( i=0; i<key_count; i++ ){
 			for( j=0; j<16; j++){
 				if(buf[i] == keyboard[j]){
-					k = power(10, (key_count - 1 - i));
-					a = a + j * k;
-					*key_value = a;
+					input = input * 10 + j;
+					*key_value = input;
 				}
 			}
 		}
-			return key_count;
+		return key_count;
 	}
 }
 
