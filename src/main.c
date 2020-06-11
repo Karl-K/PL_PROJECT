@@ -122,7 +122,7 @@ void select_mode() {
 		else if( buf[0] == '2' ) { mode = 100; }
 		else if( buf[0] == '3' ) { mode = 1000; }
 		else {
-			printf("ERRPR"); sel.all = 0
+			printf("ERRPR"); sel.all = 0;
 		}
 	}
 	
