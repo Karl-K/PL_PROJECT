@@ -101,8 +101,7 @@ truth_t logic() {
 
 void select_mode() {
 	int i; char buf[1];
-	char clcd_str[20] = "";
-
+	
 	led_clear();
 	dot_clear();
 	fnd_clear();
