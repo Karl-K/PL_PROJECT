@@ -212,7 +212,7 @@ void output_mode() {
 
 	int money_each;
 	int money_loser;
-	int due
+	int due;
 	char money_for[20];
 	char cmoney_each[20];
 	char cmoney_loser[20];
