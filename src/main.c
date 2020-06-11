@@ -127,7 +127,7 @@ void select_mode() {
 	}
 	else if( buf[0] = 'e' ) { sel.exit = 1; break; }
 	else { 
-		printf("Error"); return sel.all;
+		printf("Error"); break;
 	}
 	
 }
