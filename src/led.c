@@ -27,7 +27,7 @@ void led_up_shift() {
 
 void led_blink_all() {
 	int i;
-	for( i=1; i<=16 ; i++ ) {
+	for( i=1; i<=10 ; i++ ) {
 		if ( i%2 == 1 ) {
 			*led = (short)~0xFF;
 		}

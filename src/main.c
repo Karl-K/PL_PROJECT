@@ -26,6 +26,7 @@ static void * map_data[100];
 static selection_t sel; 
 int people = 0;
 int money = 0;
+int mode = 0;
 
 
 int main(int argc, char* argv[]) {
@@ -92,7 +93,9 @@ void emergency_closer() {
 truth_t logic() {
 	if( sel.all == 0 ) { select_mode(); }
 	else if( sel.exit == 1 ) { return FALSE; }
-	else { input_mode(); }
+	else if( sel.input == 1 ) { input_mode(); }
+	else if( sel.mini == 1 ) { mini_game(); }
+	else { output_mode(); }
 	return TRUE;
 }
 
@@ -108,25 +111,47 @@ void select_mode() {
 	printf("\n");
 	printf("************************************\n");
 	printf("*    SHARE THE EXPENSES EQUALLY    *\n");
-	printf("*       press Enter to start       *\n");
+	printf("*   1 : 10    2 : 100    3 : 1000  *\n");
 	printf("*         press 'e' to exit        *\n");
 	printf("************************************\n\n");
 	scanf("%s", buf);
 
 	if( buf[0] = 'e' ) { sel.exit = 1; break; }
-	else {
-		sel.input = 1; sel.exit = 0; break;
+	else if( buf[0] = '1' ) {
+		sel.input = 1; sel.exit = 0; mode = 10; break;
+	}
+	else if( buf[0] = '2' ) {
+		sel.input = 1; sel.exit = 0; mode = 100; break;
+	}
+	else if( buf[0] = '3' ) {
+		sel.input = 1; sel.exit = 0; mode = 1000; break;
+	}
+	else { 
+		printf("Error"); return sel.all;
 	}
 	
 }
 
 void input_mode() {
-	int key_count, key_value;
-	char clcd_str[20];
-	key_count = keyboard_read( &key_value );
-	fnd_write( key_value , 7 );
-	sprintf( clcd_str, "money : %d", key_value );
+	int key_value;
+	char clcd_str1[20];
+	char clcd_str2[20];
+	
+	people = keyboard_read( &key_value );
+	dot_write( people );
+	sprintf( clcd_str1, "People : %d", people );
 	clcd_set_DDRAM( 0x00 );
+	clcd_write_string( clcd_str1 );
+	
+	money = keyboard_read( &key_value );
+	fnd_write( money, 7 );
+	sprintf( clcd_str2, "Money : %d", money );
+	clcd_set_DDRAM( 0x40 );
+	clcd_write_string( clcd_str2 );
+
+	if( (money/people)%mode == 0 ) { sel.output == 1; break; }
+	else { sel.mini == 1; break; }
+
 
 	usleep(0);
 }
@@ -134,11 +159,21 @@ void input_mode() {
 
 
 void mini_game() {
+	led_clear();
+	dot_clear();
+	fnd_clear();
+	clcd_clear_display();
+
 	int boom;
 	int p[people];
 	int diff;
 	int loser;
 	int min = 16;
+	char explain[20];
+	char closer[20];
+	char cboom[20];
+
+	led_blink_all();
 	
 	srand( time(NULL) );	// seed
 	boom =  rand()%16;
@@ -146,16 +181,70 @@ void mini_game() {
 	int i;
 
 	for( i=0; i<people; i++ ) {
+		sprintf( explain, "Press key for %d", i + 1 );
+		clcd_write_string( explain );
 		scanf("%d", p[i]);
-		clcd_write();
+		
 		diff = abs( boom - p[i] );
 		
 		if ( min > diff ) {
 			min = diff;
-			loser = i;
+			loser = i + 1;
 		}
 		else { min = min; }
 	}
-	clcd_write_string();
+	sprintf( cboom, "Boom : %d, pick : %d", boom, p[loser] );
+	clcd_write_string( cboom );
+	sprintf( closer, "Looser : %d", loser )
+	clcd_set_DDRAM( 0x40 );
+	clcd_write_string( closer );
+
+	usleep(5000000);
+	sel.ouput = 1;
+	break;
 }
-	
+
+void output_mode() {
+	led_clear();
+	dot_clear();
+	fnd_clear();
+	clcd_clear_display();
+
+	int money_each;
+	int money_loser;
+	int due
+	char money_for[20];
+	char cmoney_each[20];
+	char cmoney_loser[20];
+	sprintf( money_for, "Money for each : " );
+	clcd_write_string( money_for );
+
+	if( sel.mini == 0 ) {
+		sprintf( money_for, "Money for each : " );
+		clcd_write_string( money_for );
+		money_each = money / people;
+		sprintf( cmoney_each, "%d", money_each );
+		clcd_set_DDRAM( 0x40 );
+		clcd_write_string( cmoney_each );
+		dot_write( 0x0F );
+		fnd_write( money_each, 7 );
+		
+		usleep(0);
+	}
+	else {
+		due = (money/people) % mode;
+		money_each = (money - due)/people;
+		money_loser = money_each + due;
+		sprintf( cmoney_each, "each : %d", money_each );
+		clcd_write_string( cmoney_each );
+		sprintf( cmoney_loser, "loser : %d", money_loser );
+		clcd_set_DDRAM( 0x40 );
+		clcd_write_stirng( cmoney_loser );
+		dot_write( 0x0F );
+		fnd_write( money_each, 7 );
+
+		usleep(0);
+	}
+
+	usleep(0);
+}

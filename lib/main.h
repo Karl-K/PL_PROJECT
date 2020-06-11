@@ -38,7 +38,8 @@ typedef union {
 	struct {
 		unsigned char  input : 1;
 		unsigned char  mini : 1;
-		unsigned char exit : 1;
+		unsigned char  output : 1;
+		unsigned char  exit : 1;
 	};
 } selection_t;
 
@@ -51,6 +52,7 @@ truth_t logic();
 void select_mode();
 void input_mode();
 void mini_game();
+void output_mode();
 
 
 #endif
