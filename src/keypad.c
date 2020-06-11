@@ -2,6 +2,7 @@
 #include "keypad.h"
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 
 static short * keypad_out, * keypad_in;
