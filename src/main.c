@@ -211,7 +211,7 @@ void mini_game() {
 	sprintf( closer, "Looser : %d", loser );
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( closer );
-	dot_write( loser )
+	dot_write( loser );
 
 	usleep(5000000);
 	mini = 1;
