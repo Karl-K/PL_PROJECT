@@ -207,7 +207,7 @@ void mini_game() {
 		else { min = min; }
 	}
 	clcd_clear_display();
-	sprintf( cboom, "B : %d, p : %d", boom, p[loser] );
+	sprintf( cboom, "B : %d, p : %d", boom, p[loser-1] );
 	clcd_write_string( cboom );
 	sprintf( closer, "Looser : %d", loser );
 	clcd_set_DDRAM( 0x40 );
