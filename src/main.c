@@ -125,9 +125,9 @@ void select_mode() {
 	else if( buf[0] = '3' ) {
 		sel.input = 1; mode = 1000;
 	}
-	else if( buf[0] = 'e' ) { sel.exit = 1; break; }
+	else if( buf[0] = 'e' ) { sel.exit = 1;}
 	else { 
-		printf("Error"); sel.exit = 1; break;
+		printf("Error"); sel.exit = 1;
 	}
 	
 }
