@@ -163,7 +163,7 @@ void input_mode() {
 	}
 
 
-	usleep(3000000);
+	usleep(4000000);
 }
 	
 
@@ -260,7 +260,7 @@ void output_mode() {
 		led_blink_all();
 		fnd_deci_number( money_each );
 
-		usleep(5000000);
+		usleep(10000000);
 	}
 
 	usleep(0);
