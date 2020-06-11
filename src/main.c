@@ -140,32 +140,18 @@ void input_mode() {
 	clcd_write_string( clcd_str2 );
 	
 	i = keyboard_read( &key_value );
-	if( i > 2 ) {
-		sprintf( clcd_str1, "Retype : ");
-		clcd_set_DDRAM( 0x00 );
-		clcd_write_string( clcd_str1 );
-	}
-	else { 
-		people = key_value;
-		dot_write( people );
-		sprintf( clcd_str1, "People : %d", people );
-		clcd_set_DDRAM( 0x00 );
-		clcd_write_string( clcd_str1 );
-	}
+	people = key_value;
+	dot_write( people );
+	sprintf( clcd_str1, "People : %d", people );
+	clcd_set_DDRAM( 0x00 );
+	clcd_write_string( clcd_str1 );
 	
 	j = keyboard_read( &key_value );
-	if( j > 8 ) {
-		sprintf( clcd_str2, "Retype : " );
-		clcd_set_DDRAM( 0x40 );
-		clcd_write_string( clcd_str2 );
-	}
-	else {
-		money = key_value;
-		fnd_write( money, 7 );
-		sprintf( clcd_str2, "Money : %d", money );
-		clcd_set_DDRAM( 0x40 );
-		clcd_write_string( clcd_str2 );
-	}
+	money = key_value;
+	fnd_write( money, 7 );
+	sprintf( clcd_str2, "Money : %d", money );
+	clcd_set_DDRAM( 0x40 );
+	clcd_write_string( clcd_str2 );
 
 	if( (money/people)%mode == 0 ) { sel.output == 1;}
 	else { sel.mini == 1;}
