@@ -148,7 +148,7 @@ void input_mode() {
 	
 	j = keyboard_read( &key_value );
 	money = key_value;
-	fnd_write( money, 7 );
+	//fnd_write( money, 7 );
 	sprintf( clcd_str2, "Money : %d", money );
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( clcd_str2 );
