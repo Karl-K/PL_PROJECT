@@ -193,86 +193,8 @@ void mini_game() {
 	boom =  rand()%16;
 	
 	int i, j, k;
-	do {
-		if( d = 0 ) {
-			for( i=0; i<people; i++ ) {
-				clcd_clear_display();
-				sprintf( explain, "Press key for %d", i + 1 );
-				clcd_write_string( explain );
-				k = keyboard_read( &key_value );
-				p[i] = key_value;
-		
-				diff = abs( boom - p[i] );
-		
-				if( min > diff ) {
-					min = diff;
-					loser = i + 1;
-					re[i] = loser;
-				}
-				else if( min = diff ) {
-					re[i] = i + 1;
-					draw = 1;
-					d = 1;
-				}
-				else { min = min; }
-			}
-			
-			if( draw = 1) {
-				clcd_clear_display();
-				sprintf( restart1, "Draw !! ");
-				clcd_write_string( restart1 );
-				clcd_set_DDRAM( 0x40 );
-				sprintf( restart2, "Ready to Restart" );
-				clcd_write_string( restart2 );
-				usleep(3000000);
-			}
-			
-		}
 
-		if( d = 1 ) {
-			clcd_clear_display();
-			for ( i = 0; i<people; i++ ) {
-				p[i] = 0;
-			}
-			
-			for( i=0; i<people; i++ ) {
-				if( re[i] != '0' ) {
-					clcd_clear_display();
-					sprintf( explain, "Press key for %d", re[i] );
-					clcd_write_string( explain );
-					k = keyboard_read( &key_value );
-					p[i] = key_value;
-		
-					diff = abs( boom - p[i] );
-		
-					if( min > diff ) {
-						min = diff;
-						loser = i + 1;
-						re[i] = loser;
-					}
-					else if( min = diff ) {
-						re[i] = i + 1;
-						draw = 1;
-						d = 1;
-					}
-					else { min = min; }
-				}
-			}
-
-			if( draw = 1) {
-				clcd_clear_display();
-				sprintf( restart1, "Draw !! ");
-				clcd_write_string( restart1 );
-				clcd_set_DDRAM( 0x40 );
-				sprintf( restart2, "Ready to Restart" );
-				clcd_write_string( restart2 );
-				usleep(3000000);
-			}
-		}
-	} while( draw = 0 );
-
-
-	/* for( i=0; i<people; i++ ) {
+	for( i=0; i<people; i++ ) {
 		clcd_clear_display();
 		sprintf( explain, "Press key for %d", i + 1 );
 		clcd_write_string( explain );
@@ -289,19 +211,6 @@ void mini_game() {
 		else { min = min; }
 	}
 
-	for( i=0; i<people; i++ ) {
-		for( j=0; j<people; j++ ) {
-			if( (i != j) && (re[i] != NULL) ) {
-				clcd_clear_display();
-				sprintf( restart1, "Draw !! ");
-				clcd_write_stirng( restart1 );
-				clcd_set_DDRAM( 0x40 );
-				sprintf( restart2, "Ready to Restart" );
-				clcd_write_display( restart2 );
-			}
-		}
-	}
-	*/
 
 	clcd_clear_display();
 	sprintf( cboom, "B : %d, p : %d", boom, p[loser-1] );
