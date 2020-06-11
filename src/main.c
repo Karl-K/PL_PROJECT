@@ -230,8 +230,7 @@ void output_mode() {
 	char money_for[20];
 	char cmoney_each[20];
 	char cmoney_loser[20];
-	sprintf( money_for, "Money for each : " );
-	clcd_write_string( money_for );
+	
 
 	if( mini == 0 ) {
 		sprintf( money_for, "Money for each : " );
@@ -244,7 +243,7 @@ void output_mode() {
 		led_blink_all();
 		fnd_deci_number( money_each );
 		
-		usleep(0);
+		usleep(5000000);
 	}
 	else {
 		due = (money/people) % mode;
@@ -259,8 +258,9 @@ void output_mode() {
 		led_blink_all();
 		fnd_deci_number( money_each );
 
-		usleep(0);
+		usleep(5000000);
 	}
 
 	usleep(0);
+	sel.all = 0;
 }
