@@ -191,6 +191,7 @@ void mini_game() {
 	int i;
 
 	for( i=0; i<people; i++ ) {
+		clcd_clear_display();
 		sprintf( explain, "Press key for %d", i + 1 );
 		clcd_write_string( explain );
 		p[i] = keyboard_read( &key_value );
