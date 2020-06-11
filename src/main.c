@@ -157,7 +157,7 @@ void input_mode() {
 	if( j > 8 ) {
 		sprintf( clcd_str2, "Retype : " );
 		clcd_set_DDRAM( 0x40 );
-		clcd_write_stirng( clcd_str2 );
+		clcd_write_string( clcd_str2 );
 	}
 	else {
 		money = key_value;
