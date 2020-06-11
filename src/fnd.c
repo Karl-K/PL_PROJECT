@@ -47,6 +47,14 @@ void fnd_write(int hexadecimal, int fnd_num) {
 	*fnd[fnd_num] = fnd_hexadecimal[hexadecimal];
 }
 
+void fnd_deci_number(int number) {
+	int i;
+	for(i=0; i<MAX_FND; i++) {
+		fnd_write( (number%10), MAX_FND-i );
+		number = number/10;
+	}
+}
+
 void fnd_hexa_number(unsigned long number) {
 	int i;
 	for(i=0; i<MAX_FND; i++){

@@ -148,7 +148,7 @@ void input_mode() {
 	
 	j = keyboard_read( &key_value );
 	money = key_value;
-	//fnd_write( money, 7 );
+	fnd_deci_number( money );
 	sprintf( clcd_str2, "Money : %d", money );
 	clcd_set_DDRAM( 0x40 );
 	clcd_write_string( clcd_str2 );
@@ -231,7 +231,7 @@ void output_mode() {
 		clcd_set_DDRAM( 0x40 );
 		clcd_write_string( cmoney_each );
 		dot_write( 0x0F );
-		fnd_write( money_each, 7 );
+		fnd_deci_number( money_each );
 		
 		usleep(0);
 	}
@@ -245,7 +245,7 @@ void output_mode() {
 		clcd_set_DDRAM( 0x40 );
 		clcd_write_string( cmoney_loser );
 		dot_write( 0x0F );
-		fnd_write( money_each, 7 );
+		fnd_deci_number( money_each );
 
 		usleep(0);
 	}
