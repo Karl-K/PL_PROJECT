@@ -160,6 +160,7 @@ void input_mode() {
 
 
 	usleep(0);
+	break;
 }
 	
 
