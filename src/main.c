@@ -172,6 +172,7 @@ void mini_game() {
 	char explain[20];
 	char closer[20];
 	char cboom[20];
+	int key_value;
 
 	led_blink_all();
 	
@@ -215,7 +216,6 @@ void output_mode() {
 	char money_for[20];
 	char cmoney_each[20];
 	char cmoney_loser[20];
-	int key_value;
 	sprintf( money_for, "Money for each : " );
 	clcd_write_string( money_for );
 
