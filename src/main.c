@@ -258,7 +258,7 @@ void mini_game() {
 						draw = 1;
 						d = 1;
 					}
-					else { min = min }
+					else { min = min; }
 				}
 			}
 
