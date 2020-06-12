@@ -214,7 +214,7 @@ void mini_game() {
 					draw = 1;
 					d = 1;
 				}
-				else {}
+				else { min = min; }
 			}
 			
 			if( draw = 1) {
@@ -240,12 +240,13 @@ void mini_game() {
 			for( i=0; i<people; i++ ) {
 				if( re[i] == 1 ) {
 					clcd_clear_display();
-					sprintf( explain, "Press key for %d", re[i]+1 );
+					sprintf( explain, "Press key for %d", i + 1 );
 					clcd_write_string( explain );
 					k = keyboard_read( &key_value );
 					p[i] = key_value;
 		
 					diff = abs( boom - p[i] );
+					re[i] = 0;
 		
 					if( min > diff ) {
 						min = diff;
@@ -257,7 +258,7 @@ void mini_game() {
 						draw = 1;
 						d = 1;
 					}
-					else {}
+					else { min = min }
 				}
 			}
 
