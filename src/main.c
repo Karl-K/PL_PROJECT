@@ -209,12 +209,12 @@ void mini_game() {
 					loser = i + 1;
 					re[i] = 1;
 				}
-				else if( min = diff ) {
+				else if( min == diff ) {
 					re[i] = 1;
 					draw = 1;
 					d = 1;
 				}
-				else { min = min; }
+				else
 			}
 			
 			if( draw = 1) {
@@ -252,12 +252,12 @@ void mini_game() {
 						loser = i + 1;
 						re[i] = 1;
 					}
-					else if( min = diff ) {
+					else if( min == diff ) {
 						re[i] = 1;
 						draw = 1;
 						d = 1;
 					}
-					else { min = min; }
+					else
 				}
 			}
 
