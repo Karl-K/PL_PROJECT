@@ -214,7 +214,7 @@ void mini_game() {
 					draw = 1;
 					d = 1;
 				}
-				else
+				else {}
 			}
 			
 			if( draw = 1) {
@@ -257,7 +257,7 @@ void mini_game() {
 						draw = 1;
 						d = 1;
 					}
-					else
+					else {}
 				}
 			}
 
