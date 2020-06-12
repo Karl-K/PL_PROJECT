@@ -207,10 +207,10 @@ void mini_game() {
 				if( min > diff ) {
 					min = diff;
 					loser = i + 1;
-					re[i] = loser;
+					re[i] = 1;
 				}
 				else if( min = diff ) {
-					re[i] = i + 1;
+					re[i] = 1;
 					draw = 1;
 					d = 1;
 				}
@@ -235,8 +235,10 @@ void mini_game() {
 				p[i] = 0;
 			}
 			
+			draw = 0;
+
 			for( i=0; i<people; i++ ) {
-				if( re[i] != '0' ) {
+				if( re[i] == 1 ) {
 					clcd_clear_display();
 					sprintf( explain, "Press key for %d", re[i] );
 					clcd_write_string( explain );
@@ -248,10 +250,10 @@ void mini_game() {
 					if( min > diff ) {
 						min = diff;
 						loser = i + 1;
-						re[i] = loser;
+						re[i] = 1;
 					}
 					else if( min = diff ) {
-						re[i] = i + 1;
+						re[i] = 1;
 						draw = 1;
 						d = 1;
 					}
