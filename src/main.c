@@ -229,7 +229,7 @@ void mini_game() {
 			
 		}
 
-		if( d = 1 ) {
+		else {
 			clcd_clear_display();
 			for ( i = 0; i<people; i++ ) {
 				p[i] = 0;
